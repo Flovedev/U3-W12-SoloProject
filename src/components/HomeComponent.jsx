@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Alert, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getAlbums } from "../redux/actions";
 import SingleAlbumComponent from "./SingleSongComponent";
@@ -8,22 +8,36 @@ const HomeComponent = () => {
   const display = useSelector((state) => state.display);
   const search = useSelector((state) => state.search);
   const isLoading = useSelector((state) => state.display.isLoading);
+  const isError = useSelector((state) => state.display.isError);
+  const liked = useSelector((state) => state.liked.liked);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAlbums("iron maiden"));
-    console.log(display);
+    // console.log(display);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     dispatch(getAlbums(search.result));
-    console.log(search.result);
+    // console.log(search.result);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
 
+  useEffect(() => {
+    console.log(liked);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [liked]);
+
+  isError && (
+    <Alert variant="danger" className="mr-2">
+      We got an error, yare yare daze...
+    </Alert>
+  );
+
   return isLoading === true ? (
-    "Loading"
+    <Spinner className="mr-2" animation="border" variant="success" />
   ) : (
     <div className="flex-grow-1" id="main">
       <div className="container-fluid" id="first-container">

@@ -9,7 +9,7 @@ const likeReducer = (state = initialState, action) => {
     case GET_LIKED:
       return {
         ...state,
-        liked: action.payload,
+        liked: [...state.liked, action.payload],
       };
 
     case REMOVE_LIKED:

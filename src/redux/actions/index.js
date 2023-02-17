@@ -48,6 +48,15 @@ export const getError = (e) => {
   };
 };
 
+export const addliked = (e) => {
+  return async (dispatch, getState) => {
+    dispatch({
+      type: GET_LIKED,
+      payload: e,
+    });
+  };
+};
+
 export const getAlbums = (endpoint) => {
   const url =
     "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + endpoint;

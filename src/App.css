@@ -173,3 +173,13 @@ span {
 .badge:hover {
   cursor: pointer;
 }
+
+.play-button {
+  position: absolute;
+  /* left: 0; */
+  bottom: 0;
+}
+
+#player {
+  width: 100%;
+}
