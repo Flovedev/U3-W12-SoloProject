@@ -9,7 +9,7 @@ const NavbarComponent = () => {
 
   return (
     <div className="d-flex flex-column" id="navbar-left">
-      <a href="./index.html?artist=ironmaiden">
+      <a href="/">
         <div className="d-flex align-items-center mx-1 p-3 my-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"

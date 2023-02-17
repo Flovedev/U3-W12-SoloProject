@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Container, Alert, Spinner } from "react-bootstrap";
+import { Container, Row, Alert, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getAlbums } from "../redux/actions";
 import SingleAlbumComponent from "./SingleSongComponent";
@@ -39,11 +39,13 @@ const HomeComponent = () => {
         <h3 className="text-white">Songs</h3>
         <Container
           id="album-card-container"
-          className="row justify-content-center pr-0"
+          className=" justify-content-center pr-0"
         >
-          {display.songs.data.map((song) => (
-            <SingleAlbumComponent data={song} key={song.id} />
-          ))}
+          <Row>
+            {display.songs.data.map((song) => (
+              <SingleAlbumComponent data={song} key={song.id} />
+            ))}
+          </Row>
         </Container>
       </div>
     </div>

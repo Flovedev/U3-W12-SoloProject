@@ -7,7 +7,6 @@ export const GET_LOADING = "GET_LOADING";
 export const GET_ERROR = "GET_ERROR";
 
 export const addPlaySong = (song) => {
-  console.log(song);
   return {
     type: PLAY_SONG,
     payload: song,
@@ -67,7 +66,6 @@ export const getAlbums = (endpoint) => {
       let res = await fetch(url);
       if (res.ok) {
         let data = await res.json();
-        // console.log(data);
         dispatch({
           type: GET_SONGS,
           payload: data,

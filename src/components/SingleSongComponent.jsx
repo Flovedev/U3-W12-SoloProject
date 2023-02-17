@@ -13,7 +13,7 @@ const SingleAlbumComponent = ({ data }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="col-lg-4 flex-grow-1">
+    <div className="col-lg-4 flex-grow-1 cards-full">
       <div className="card mb-3 cards-omg">
         <div className="row no-gutters">
           <div className="col-4 d-inline-block">
@@ -27,7 +27,7 @@ const SingleAlbumComponent = ({ data }) => {
             <Badge
               variant="info"
               className="badge"
-              onClick={() => dispatch(addliked(data))}
+              onClick={() => dispatch(displayLiked(data))}
             >
               Like
             </Badge>
