@@ -3,7 +3,6 @@ import ReactAudioPlayer from "react-audio-player";
 
 const BottomBarComponent = () => {
   const play = useSelector((state) => state.play.play);
-  //   console.log(play);
 
   return play.album !== undefined ? (
     <div className="d-flex justify-content-between pb-0" id="bottom-bar">

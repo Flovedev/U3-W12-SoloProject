@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Container, Alert, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getAlbums } from "../redux/actions";
@@ -9,26 +9,18 @@ const HomeComponent = () => {
   const search = useSelector((state) => state.search);
   const isLoading = useSelector((state) => state.display.isLoading);
   const isError = useSelector((state) => state.display.isError);
-  const liked = useSelector((state) => state.liked.liked);
+  //   const liked = useSelector((state) => state.liked.liked);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAlbums("iron maiden"));
-    // console.log(display);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     dispatch(getAlbums(search.result));
-    // console.log(search.result);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search]);
-
-  useEffect(() => {
-    console.log(liked);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [liked]);
 
   isError && (
     <Alert variant="danger" className="mr-2">
@@ -47,7 +39,7 @@ const HomeComponent = () => {
         <h3 className="text-white">Songs</h3>
         <Container
           id="album-card-container"
-          className="row justify-content-center"
+          className="row justify-content-center pr-0"
         >
           {display.songs.data.map((song) => (
             <SingleAlbumComponent data={song} key={song.id} />

@@ -12,10 +12,6 @@ const SingleAlbumComponent = ({ data }) => {
   const liked = useSelector((state) => state.liked.liked);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    // console.log(liked);
-  }, [liked]);
-
   return (
     <div className="col-lg-4 flex-grow-1">
       <div className="card mb-3 cards-omg">
