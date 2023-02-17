@@ -1,5 +1,5 @@
-.App {
-  text-align: center;
+#root {
+  height: 100vh;
 }
 
 .App-logo {
@@ -35,4 +35,141 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#all-content {
+  background-color: #181818;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+#top-content {
+  height: 90vh;
+}
+
+#navbar-left {
+  width: 230px;
+  color: #a3a39b;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+#navbar-left a {
+  color: inherit;
+}
+
+#navbar-left div:nth-child(-n + 3) div:hover {
+  cursor: pointer;
+  background-color: #282828;
+  color: white;
+}
+
+#navbar-left li:hover {
+  cursor: pointer;
+  color: white;
+}
+
+#navbar-left div:last-of-type:hover {
+  cursor: pointer;
+  color: white;
+}
+
+#navbar-left > div:nth-child(2) {
+  font-size: small;
+}
+
+#navbar-left > div:nth-child(3) {
+  font-size: small;
+}
+
+#navbar-left > a:first-of-type {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+#navbar-left ul {
+  color: #808080;
+  list-style-type: none;
+}
+
+#navbar-left > div:last-of-type > div:first-of-type {
+  overflow-y: auto;
+}
+
+#navbar-left > div:last-of-type > div:last-of-type {
+  background-color: #000000;
+}
+
+.selected {
+  background-color: #282828;
+  color: white;
+}
+
+#bottom-bar {
+  height: 10vh;
+  color: #a3a39b;
+  background-color: #181818;
+}
+
+#bottom-bar p,
+span {
+  color: #ffffff;
+  font-size: small;
+}
+
+#bottom-bar img {
+  width: 60px;
+  height: 60px;
+}
+
+#bottom-bar span {
+  font-size: smaller;
+  color: #b2aba5;
+}
+
+#bottom-bar p:hover,
+#bottom-bar span:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#bottom-bar svg:hover {
+  color: white;
+}
+
+#player-displayer {
+  width: 700px;
+}
+
+#second-container {
+  background-color: #181818;
+}
+
+.cards-omg {
+  max-width: 470px;
+  background-color: #312728;
+}
+
+.cards-omg div div img {
+  width: 90px;
+}
+
+.card {
+  background-color: #2a2424;
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+
+#first-container {
+  height: 90vh;
+  overflow-y: auto;
+}
+
+.badge {
+  position: absolute;
+  right: 0px;
+}
+
+.badge:hover {
+  cursor: pointer;
 }
